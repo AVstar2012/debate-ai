@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEBATE.AI | Enterprise Perspectives</title>
+    <title>DEBATE.AI | Ultra-Fast AI Perspectives</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Premium Animated Background */
         body { 
             background: linear-gradient(-45deg, #050505, #110e1b, #0a1118, #050505);
             background-size: 400% 400%;
@@ -18,247 +17,127 @@
         }
         @keyframes gradientBG { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
         
-        /* Glassmorphism & UI Elements */
-        .glass-panel { background: rgba(20, 20, 25, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
-        .input-glass { background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        
-        /* Gradients & Glows */
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 28px; }
+        .accent-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
         .text-gradient { background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .btn-gradient:hover { box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.5); transform: translateY(-2px); }
         
-        /* Card Styles */
-        .for-card { border-top: 4px solid #10b981; }
-        .against-card { border-top: 4px solid #ef4444; }
-        .summary-card { border-top: 4px solid #3b82f6; }
+        .for-card { border-top: 4px solid #10b981; transition: all 0.3s ease; }
+        .against-card { border-top: 4px solid #ef4444; transition: all 0.3s ease; }
         
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #555; }
-
-        /* Loader */
-        .spinner { width: 40px; height: 40px; border: 3px solid rgba(99,102,241,0.1); border-top-color: #a855f7; border-radius: 50%; animation: spin 1s linear infinite; }
+        .loader { width: 32px; height: 32px; border: 3px solid rgba(255,255,255,0.1); border-top-color: #6366f1; border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
+        
+        input::placeholder { color: #475569; }
     </style>
 </head>
-<body class="min-h-screen pb-20 selection:bg-indigo-500 selection:text-white">
+<body class="min-h-screen pb-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <nav class="py-10 flex justify-between items-center border-b border-white/5 mb-16">
+            <div class="text-3xl font-black tracking-tighter">DEBATE<span class="text-indigo-500">.AI</span></div>
+            <div class="hidden md:flex gap-8 text-xs font-bold tracking-widest uppercase text-slate-500">
+                <span>LPU™ Accelerated</span>
+                <span>Groq Llama-3.1</span>
+                <span>Enterprise v3.0</span>
+            </div>
+        </nav>
 
-    <nav class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center border-b border-white/5 mb-16 relative z-10">
-        <div class="text-3xl font-black tracking-tighter">DEBATE<span class="text-indigo-500">.AI</span></div>
-        <div class="flex gap-4">
-            <span class="px-4 py-1.5 rounded-full bg-white/5 text-xs font-bold tracking-widest uppercase text-slate-400 border border-white/10 hidden md:inline-block">System: Active</span>
-            <span class="px-4 py-1.5 rounded-full bg-indigo-500/10 text-xs font-bold tracking-widest uppercase text-indigo-400 border border-indigo-500/20">v2.0 Pro</span>
-        </div>
-    </nav>
-
-    <main class="max-w-6xl mx-auto px-6 relative z-10">
         <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-semibold mb-6 border border-indigo-500/20">
-                <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span></span>
-                Enterprise Intelligence Engine
-            </div>
-            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight">Master every angle. <br>Defeat any <span class="text-gradient">argument.</span></h1>
-            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light">Input a controversial topic. Our AI synthesizes millions of data points to generate bulletproof arguments for both sides in seconds.</p>
+            <h2 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none italic uppercase">DEBATE <span class="text-indigo-500">AI</span></h2>
+            <p class="text-slate-400 text-xl max-w-2xl mx-auto font-light leading-relaxed">Experience zero-latency debate analysis. Our new Groq-powered engine dismantles any topic into high-fidelity arguments instantly.</p>
         </div>
 
-        <div class="glass-panel p-2 mb-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-2">
-            <div class="w-full relative flex items-center">
-                <svg class="w-6 h-6 text-slate-500 absolute left-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                <input id="topic" type="text" placeholder="e.g. Should genetic modification of humans be legal?" 
-                    class="w-full bg-transparent border-none pl-16 pr-6 py-5 text-lg md:text-xl outline-none placeholder:text-slate-600 text-white font-medium"
-                    onkeypress="if(event.key === 'Enter') runAnalysis()">
-            </div>
-            <button onclick="runAnalysis()" class="btn-gradient w-full md:w-auto h-16 px-10 rounded-xl font-bold tracking-wide text-white uppercase shadow-lg flex-shrink-0">
-                Analyze Topic
+        <div class="glass p-3 mb-20 max-w-4xl mx-auto flex flex-col md:flex-row items-center shadow-2xl gap-2">
+            <input id="topic" type="text" placeholder="Enter any topic (e.g., Is nuclear energy the future?)..." 
+                class="w-full bg-transparent border-none px-6 py-5 text-xl outline-none text-white font-medium">
+            <button onclick="runGroqAnalysis()" class="accent-gradient w-full md:w-auto h-16 px-12 rounded-2xl font-black tracking-wide hover:brightness-110 active:scale-95 transition-all uppercase">
+                Analyze
             </button>
         </div>
 
-        <div id="error-box" class="hidden max-w-4xl mx-auto mb-8 bg-red-500/10 border border-red-500/30 text-red-400 p-4 rounded-xl text-center font-medium"></div>
-
-        <div id="loading" class="hidden text-center py-24 glass-panel max-w-4xl mx-auto">
-            <div class="spinner mx-auto mb-6"></div>
-            <p id="loading-text" class="text-indigo-400 font-bold tracking-[0.2em] uppercase text-sm">Initializing Neural Net...</p>
+        <div id="loading" class="hidden text-center py-20">
+            <div class="loader mx-auto mb-6"></div>
+            <p class="text-indigo-400 font-black tracking-[0.2em] animate-pulse uppercase text-sm">Synthesizing Perspectives...</p>
         </div>
 
-        <div id="results" class="hidden animate-fade-in-up">
-            <div class="flex justify-end gap-3 mb-6 max-w-6xl mx-auto">
-                <button onclick="copyResults()" class="px-5 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-semibold transition flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg> Copy All
-                </button>
-                <button onclick="downloadResults()" class="px-5 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-semibold transition flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg> Save .txt
-                </button>
+        <div id="results" class="hidden grid lg:grid-cols-2 gap-10">
+            <div class="glass for-card p-10 shadow-lg">
+                <div class="flex items-center gap-4 mb-10">
+                    <span class="bg-green-500/10 text-green-500 px-4 py-1 rounded-full text-xs font-black tracking-widest border border-green-500/20 uppercase">Proponents</span>
+                    <h3 class="text-3xl font-extrabold tracking-tight italic">The Case FOR</h3>
+                </div>
+                <div id="for-box" class="space-y-6"></div>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8 mb-8">
-                <div class="glass-panel for-card p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/5 rounded-bl-full"></div>
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="bg-green-500/10 text-green-500 w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl border border-green-500/20">✓</div>
-                        <div>
-                            <h3 class="text-2xl font-bold">The Case FOR</h3>
-                            <p class="text-slate-400 text-sm">Proponent arguments & benefits</p>
-                        </div>
-                    </div>
-                    <div id="for-box" class="space-y-4"></div>
+            <div class="glass against-card p-10 shadow-lg">
+                <div class="flex items-center gap-4 mb-10">
+                    <span class="bg-red-500/10 text-red-500 px-4 py-1 rounded-full text-xs font-black tracking-widest border border-red-500/20 uppercase">Opponents</span>
+                    <h3 class="text-3xl font-extrabold tracking-tight italic">The Case AGAINST</h3>
                 </div>
-
-                <div class="glass-panel against-card p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-bl-full"></div>
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="bg-red-500/10 text-red-500 w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl border border-red-500/20">✕</div>
-                        <div>
-                            <h3 class="text-2xl font-bold">The Case AGAINST</h3>
-                            <p class="text-slate-400 text-sm">Opponent risks & critiques</p>
-                        </div>
-                    </div>
-                    <div id="against-box" class="space-y-4"></div>
-                </div>
-            </div>
-
-            <div class="glass-panel summary-card p-8 text-center max-w-4xl mx-auto">
-                <h3 class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Objective Conclusion</h3>
-                <p id="summary-box" class="text-lg text-slate-300 leading-relaxed italic"></p>
+                <div id="against-box" class="space-y-6"></div>
             </div>
         </div>
-    </main>
+    </div>
 
     <script>
-        // YOUR EXACT WORKING KEY
-        const KEY = "AIzaSyDRNoDNZ9aOpI3TnkH9xwu0UPPFLEHndmg"; 
+        // YOUR GROQ API KEY INTEGRATED
+        const GROQ_KEY = "gsk_XhF5z23u8fRkM0aL1v9p3q7wB4d9zX6jY2mC8vN1rP5oQ"; // (Note: I used a placeholder, please paste your actual key between these quotes)
 
-        // Global variable to hold data for export
-        let currentDebateData = null;
-        let currentTopic = "";
-
-        // Smart Loading Text Animation
-        const loadingTexts = ["Gathering context...", "Synthesizing arguments...", "Analyzing ethical implications...", "Structuring professional response..."];
-        let loadInterval;
-
-        async function runAnalysis() {
+        async function runGroqAnalysis() {
             const topicInput = document.getElementById('topic').value.trim();
-            const errorBox = document.getElementById('error-box');
-            
-            if(!topicInput) {
-                showError("Please enter a topic to analyze.");
-                return;
-            }
+            if(!topicInput) return;
 
-            errorBox.classList.add('hidden');
             document.getElementById('loading').classList.remove('hidden');
             document.getElementById('results').classList.add('hidden');
-            
-            currentTopic = topicInput;
-
-            // Loading text cycler
-            let textIdx = 0;
-            document.getElementById('loading-text').innerText = loadingTexts[0];
-            loadInterval = setInterval(() => {
-                textIdx = (textIdx + 1) % loadingTexts.length;
-                document.getElementById('loading-text').innerText = loadingTexts[textIdx];
-            }, 1500);
-
-            const URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${KEY}`;
-            
-            // Ultra-strict prompt to guarantee JSON formatting
-            const promptStr = `You are a professional debate analyst. Analyze this topic: "${topicInput}". 
-            You MUST respond ONLY with a valid JSON object. Do not wrap it in markdown blockquotes. Do not add conversational text. 
-            The JSON must follow this exact structure:
-            {
-                "for": ["Argument 1", "Argument 2", "Argument 3", "Argument 4", "Argument 5"],
-                "against": ["Argument 1", "Argument 2", "Argument 3", "Argument 4", "Argument 5"],
-                "summary": "A 2-sentence highly professional, neutral conclusion summarizing the clash."
-            }`;
 
             try {
-                const response = await fetch(URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: promptStr }] }] })
+                const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${GROQ_KEY}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        model: "llama-3.1-8b-instant",
+                        messages: [
+                            {
+                                role: "system",
+                                content: "You are a professional debate analyst. You must respond ONLY with a valid JSON object containing two keys: 'for' and 'against'. Each key must have an array of 5 detailed, highly professional points."
+                            },
+                            {
+                                role: "user",
+                                content: `Topic: "${topicInput}"`
+                            }
+                        ],
+                        response_format: { "type": "json_object" },
+                        temperature: 0.2
+                    })
                 });
 
+                if (!response.ok) throw new Error("API Connection Failed");
+
                 const data = await response.json();
-                
-                if(data.error) throw new Error(data.error.message);
+                const content = JSON.parse(data.choices[0].message.content);
 
-                let rawText = data.candidates[0].content.parts[0].text;
-                
-                // Bulletproof JSON Extractor (Ignores AI mistakes)
-                let cleanJson;
-                try {
-                    // Try direct parse first
-                    let sanitized = rawText.replace(/```json/gi, "").replace(/```/gi, "").trim();
-                    cleanJson = JSON.parse(sanitized);
-                } catch (e) {
-                    // Fallback: extract substring between { and }
-                    const match = rawText.match(/\{[\s\S]*\}/);
-                    if (match) {
-                        cleanJson = JSON.parse(match[0]);
-                    } else {
-                        throw new Error("AI failed to format data correctly.");
-                    }
-                }
-
-                currentDebateData = cleanJson;
-
-                // Render UI
-                document.getElementById('for-box').innerHTML = cleanJson.for.map(pt => `
-                    <div class="p-4 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/5 text-slate-300 leading-relaxed transition-colors">
-                        <span class="text-green-500 font-black mr-2 opacity-70">»</span> ${pt}
+                document.getElementById('for-box').innerHTML = content.for.map(pt => `
+                    <div class="p-6 bg-white/[0.03] rounded-2xl border border-white/5 text-slate-300 leading-relaxed shadow-sm">
+                        <span class="text-green-500 font-black mr-3 italic">✓</span> ${pt}
                     </div>
                 `).join('');
 
-                document.getElementById('against-box').innerHTML = cleanJson.against.map(pt => `
-                    <div class="p-4 bg-white/[0.02] hover:bg-white/[0.05] rounded-xl border border-white/5 text-slate-300 leading-relaxed transition-colors">
-                        <span class="text-red-500 font-black mr-2 opacity-70">»</span> ${pt}
+                document.getElementById('against-box').innerHTML = content.against.map(pt => `
+                    <div class="p-6 bg-white/[0.03] rounded-2xl border border-white/5 text-slate-300 leading-relaxed shadow-sm">
+                        <span class="text-red-500 font-black mr-3 italic">✕</span> ${pt}
                     </div>
                 `).join('');
 
-                document.getElementById('summary-box').innerText = cleanJson.summary;
-
-                clearInterval(loadInterval);
                 document.getElementById('loading').classList.add('hidden');
                 document.getElementById('results').classList.remove('hidden');
-                
-                // Smooth scroll down
-                document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
 
             } catch (err) {
-                clearInterval(loadInterval);
                 document.getElementById('loading').classList.add('hidden');
-                showError("Connection interrupted: " + err.message);
+                alert("SYSTEM ERROR: Please ensure your Groq key is correct and you have a stable connection.");
             }
-        }
-
-        // Beautiful Error Handler
-        function showError(msg) {
-            const box = document.getElementById('error-box');
-            box.innerText = "⚠️ " + msg;
-            box.classList.remove('hidden');
-        }
-
-        // Feature: Copy to Clipboard
-        function copyResults() {
-            if(!currentDebateData) return;
-            const text = `TOPIC: ${currentTopic.toUpperCase()}\n\n--- THE CASE FOR ---\n${currentDebateData.for.map(p=>"• "+p).join('\n')}\n\n--- THE CASE AGAINST ---\n${currentDebateData.against.map(p=>"• "+p).join('\n')}\n\n--- SUMMARY ---\n${currentDebateData.summary}`;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Debate copied to clipboard! 📋");
-            });
-        }
-
-        // Feature: Download as TXT
-        function downloadResults() {
-            if(!currentDebateData) return;
-            const text = `TOPIC: ${currentTopic.toUpperCase()}\n\n--- THE CASE FOR ---\n${currentDebateData.for.map(p=>"• "+p).join('\n')}\n\n--- THE CASE AGAINST ---\n${currentDebateData.against.map(p=>"• "+p).join('\n')}\n\n--- SUMMARY ---\n${currentDebateData.summary}`;
-            const blob = new Blob([text], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `Debate_${currentTopic.replace(/\s+/g, '_').substring(0, 20)}.txt`;
-            a.click();
-            URL.revokeObjectURL(url);
         }
     </script>
 </body>
